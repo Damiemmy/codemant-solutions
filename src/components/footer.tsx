@@ -1,90 +1,58 @@
-import { motion } from "framer-motion"
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa"
+import { motion } from 'framer-motion'
+import { Mail, MessageCircle } from 'lucide-react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { Container } from './ui/Container'
 
 export default function Footer() {
+  const socials = [
+    { label: 'Email', href: 'mailto:damisaemmanuel778@gmail.com', icon: Mail },
+    { label: 'WhatsApp', href: 'https://wa.me/2348141437254', icon: MessageCircle },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/damisaemmanuel', icon: FaLinkedin },
+    { label: 'GitHub', href: 'https://github.com/Damiemmy', icon: FaGithub },
+  ]
+
   return (
-    <footer className="relative mt-20 border-t border-white/10 bg-black text-white overflow-hidden">
-
-      {/* GLOW BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-black to-black blur-3xl" />
-
-      <div className="relative px-6 md:px-20 py-16">
-
-        {/* TOP SECTION */}
-        <div className="grid md:grid-cols-3 gap-12">
-
-          {/* BRAND */}
+    <footer className="border-t border-white/10 bg-[#05070b] py-16">
+      <Container className="space-y-10">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="text-2xl font-bold">
-              Dev<span className="text-purple-400">Damisa</span>
-            </h2>
-
-            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
-              Full-stack engineer building scalable systems, real-time applications,
-              and modern web experiences that solve real problems.
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-red-400">Codemant Solutions</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Built by DevDamisa for businesses that need clarity, speed and trust.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-gray-400">
+              We help companies build software that performs, scales and supports growth without compromising quality.
             </p>
           </div>
-
-          {/* NAV LINKS */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-
-            <div className="flex flex-col gap-3 text-gray-400 text-sm">
-              <a href="#home" className="hover:text-white transition">Home</a>
-              <a href="#projects" className="hover:text-white transition">Projects</a>
-              <a href="#tech" className="hover:text-white transition">Tech Stack</a>
-              <a href="#contact" className="hover:text-white transition">Contact</a>
+          <div className="grid gap-8 sm:grid-cols-2">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-white">Quick Links</h3>
+              <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400">
+                <a href="#home" className="transition hover:text-white">Home</a>
+                <a href="#services" className="transition hover:text-white">Services</a>
+                <a href="#projects" className="transition hover:text-white">Projects</a>
+                <a href="#contact" className="transition hover:text-white">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-white">Contact</h3>
+              <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400">
+                {socials.map((social) => {
+                  const Icon = social.icon
+                  return (
+                    <motion.a key={social.label} href={social.href} target="_blank" rel="noreferrer" whileHover={{ x: 4 }} className="flex items-center gap-2 transition hover:text-white">
+                      <Icon size={16} className="text-red-400" />
+                      <span>{social.label}</span>
+                    </motion.a>
+                  )
+                })}
+              </div>
             </div>
           </div>
-
-          {/* SOCIALS */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Connect With Me</h3>
-
-            <div className="flex flex-wrap gap-4">
-
-              {[
-                { icon: FaLinkedin, link: "https://www.linkedin.com/in/damisaemmanuel" },
-                { icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=100076613114862" },
-                { icon: FaInstagram, link: "https://www.instagram.com/dammiemmy?igsh=YTVtem14a25wYTFy" },
-                { icon: FaTiktok, link: "https://www.tiktok.com/@damisaemmanuel?_r=1&_t=ZS-95sBOQVQtea" },
-                { icon: FaGithub, link: "https://github.com/Damiemmy" },
-              ].map((social, i) => (
-                <motion.a
-                  key={i}
-                  href={social.link}
-                  target="_blank"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-3 bg-white/5 border border-white/10 rounded-xl
-                  hover:bg-white/10 transition"
-                >
-                  <social.icon size={20} />
-                </motion.a>
-              ))}
-
-            </div>
-          </div>
-
         </div>
-
-        {/* DIVIDER */}
-        <div className="my-10 border-t border-white/10" />
-
-        {/* BOTTOM SECTION */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-
-          <p>
-            © {new Date().getFullYear()} DevDamisa. All rights reserved.
-          </p>
-
-          <p className="text-gray-400">
-            Built with ❤️ using Next.js & Django
-          </p>
-
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-8 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Codemant Solutions. All rights reserved.</p>
+          <p>Built by DevDamisa</p>
         </div>
-
-      </div>
+      </Container>
     </footer>
   )
 }
