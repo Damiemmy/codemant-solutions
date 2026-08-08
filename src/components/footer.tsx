@@ -6,7 +6,7 @@ import { Container } from './ui/Container'
 export default function Footer() {
   const socials = [
     { label: 'Email', href: 'mailto:damisaemmanuel778@gmail.com', icon: Mail },
-    { label: 'WhatsApp', href: 'https://wa.me/2348141437254', icon: MessageCircle },
+    { label: 'WhatsApp', href: 'https://wa.me/2347043777486', icon: MessageCircle },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/damisaemmanuel', icon: FaLinkedin },
     { label: 'GitHub', href: 'https://github.com/Damiemmy', icon: FaGithub },
   ]
