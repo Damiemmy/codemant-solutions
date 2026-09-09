@@ -90,7 +90,7 @@ export const projects: ProjectItem[] = [
       'FUTMxStore transforms a fragmented academic experience into a scalable digital product — giving students faster access to trusted resources while creating a foundation that can grow into a much larger education ecosystem.',
     github: 'https://github.com/Damiemmy',
     live: 'https://futmxstore.codemantsolutions.com/',
-    image: `${import.meta.env.BASE_URL}projects/futmxstore.jpg`,
+    image: `${import.meta.env.BASE_URL}projects/futmxstoreimg.png`,
   },
   {
     title: 'Reservation Experience Platform',
