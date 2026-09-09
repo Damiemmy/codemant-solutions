@@ -21,8 +21,19 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05070b]/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-        <button onClick={() => handleNavClick('home')} className="text-lg font-semibold tracking-[0.2em] text-white">
+        {/* <button onClick={() => handleNavClick('home')} className="text-lg font-semibold tracking-[0.2em] text-white">
           CODEMANT <span className="text-red-400">SOLUTIONS</span>
+        </button> */}
+        <button
+          onClick={() => handleNavClick('home')}
+          className="flex items-center"
+          aria-label="Go to homepage"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}logo/codemant-logo.png`}
+            alt="Codemant Solutions"
+            className="h-20 w-auto object-contain"
+          />
         </button>
 
         <nav className="hidden items-center gap-7 text-sm text-gray-400 md:flex">
