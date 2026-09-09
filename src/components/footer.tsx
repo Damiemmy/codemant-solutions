@@ -11,6 +11,14 @@ export default function Footer() {
     { label: 'GitHub', href: 'https://github.com/Damiemmy', icon: FaGithub },
   ]
 
+  const handleNavClick = (href: string) => {
+    const targetId = href.replace('#', '')
+    const element = document.getElementById(targetId)
+    if (element) {
+      window.scrollTo({ top: element.offsetTop - 90, behavior: 'smooth' })
+    }
+  }
+
   return (
     <footer className="border-t border-white/10 bg-[#05070b] py-16">
       <Container className="space-y-10">
@@ -26,10 +34,11 @@ export default function Footer() {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-white">Quick Links</h3>
               <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400">
-                <a href="#home" className="transition hover:text-white">Home</a>
-                <a href="#services" className="transition hover:text-white">Services</a>
-                <a href="#projects" className="transition hover:text-white">Projects</a>
-                <a href="#contact" className="transition hover:text-white">Contact</a>
+                <button onClick={() => handleNavClick('home')}><a className="transition hover:text-white">Home</a></button>
+                <button onClick={() => handleNavClick('about')}><a className="transition hover:text-white">About</a></button>
+                <button onClick={() => handleNavClick('services')}><a className="transition hover:text-white">Services</a></button>
+                <button onClick={() => handleNavClick('projects')}><a className="transition hover:text-white">Projects</a></button>
+                <button onClick={() => handleNavClick('contact')}><a className="transition hover:text-white">Contact</a></button>
               </div>
             </div>
             <div>

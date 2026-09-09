@@ -66,38 +66,76 @@ export const services: ServiceItem[] = [
   },
 ]
 
+// 
+
 export const projects: ProjectItem[] = [
   {
+    title: 'FUTMxStore — The Academic Infrastructure Students Deserve',
+    problem:
+      'Students often spend hours hunting through WhatsApp groups, scattered files and unreliable sources just to find lecture materials and past questions. The information exists — but the experience of accessing it is broken.',
+    solution:
+      'I designed and built FUTMxStore as a dedicated academic platform that brings faculties, departments, levels, semesters, courses and learning materials into one structured ecosystem. The architecture separates business logic, permissions and domain responsibilities so the platform can evolve without becoming difficult to maintain.',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Django',
+      'Django REST Framework',
+      'PostgreSQL',
+      'JWT',
+      'Docker',
+      'Nginx',
+      'AWS',
+    ],
+    businessValue:
+      'FUTMxStore transforms a fragmented academic experience into a scalable digital product — giving students faster access to trusted resources while creating a foundation that can grow into a much larger education ecosystem.',
+    github: 'https://github.com/Damiemmy',
+    live: 'https://futmxstore.codemantsolutions.com/',
+    image: `${import.meta.env.BASE_URL}projects/futmxstore.jpg`,
+  },
+  {
     title: 'Reservation Experience Platform',
-    problem: 'A hospitality business needed a faster booking journey with better visibility across reservations and customer communication.',
-    solution: 'We designed and delivered a polished booking experience with automation and a scalable service layer that reduced friction and improved operations.',
+    
+    problem:
+      'A real estate business was losing time and potential customers to a fragmented booking process, making it difficult to manage property availability, reservations and customer communication in one place.',
+
+    solution:
+      'We designed and delivered a polished booking experience with automation and a scalable service layer that reduced friction and improved operations.',
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    businessValue: 'Improved conversion and reduced operational overhead through a cleaner, faster customer flow.',
+    businessValue:
+      'Improved conversion and reduced operational overhead through a cleaner, faster customer flow.',
     github: 'https://github.com/Damiemmy',
     live: 'https://bookreservations.netlify.app/',
     image: `${import.meta.env.BASE_URL}projects/airbnb.jpg`,
   },
   {
     title: 'Commerce Growth Platform',
-    problem: 'An online retail brand needed a stronger digital storefront with better performance and a more dependable checkout experience.',
-    solution: 'We rebuilt the experience around reliability, speed and clear product journeys while keeping the platform easy to extend.',
+    problem:
+      'An online retail brand needed a stronger digital storefront with better performance and a more dependable checkout experience.',
+    solution:
+      'We rebuilt the experience around reliability, speed and clear product journeys while keeping the platform easy to extend.',
     technologies: ['React', 'TypeScript', 'Express', 'Stripe'],
-    businessValue: 'Lifted confidence in the buying journey and created a stronger foundation for future growth.',
+    businessValue:
+      'Lifted confidence in the buying journey and created a stronger foundation for future growth.',
     github: 'https://github.com/Damiemmy',
     live: 'https://buyit-wymc.onrender.com/',
     image: `${import.meta.env.BASE_URL}projects/ecommerce.jpg`,
   },
   {
     title: 'Internal Operations Suite',
-    problem: 'A team needed a more structured way to manage requests, approvals and recurring work without scattered tools.',
-    solution: 'We created a focused internal platform that centralised workflow tasks and helped leadership operate with clarity.',
+    problem:
+      'A team needed a more structured way to manage requests, approvals and recurring work without scattered tools.',
+    solution:
+      'We created a focused internal platform that centralised workflow tasks and helped leadership operate with clarity.',
     technologies: ['Django', 'PostgreSQL', 'Docker', 'REST APIs'],
-    businessValue: 'Reduced friction in daily operations and gave the team a dependable system to scale with.',
+    businessValue:
+      'Reduced friction in daily operations and gave the team a dependable system to scale with.',
     github: 'https://github.com/Damiemmy',
     live: 'https://github.com/Damiemmy',
     image: `${import.meta.env.BASE_URL}projects/damisa23.jpeg`,
   },
 ]
+
+
 
 export const processSteps: StepItem[] = [
   { title: 'Discover', description: 'We learn your goals, constraints and the business problem that needs solving.' },

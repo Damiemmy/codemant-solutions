@@ -38,7 +38,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href="#contact" variant="primary" className="px-4 py-2">
+          <Button onClick={() => handleNavClick("contact")} variant="primary" className="px-4 py-2">
             Book Consultation
           </Button>
         </div>

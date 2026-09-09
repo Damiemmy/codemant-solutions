@@ -5,6 +5,14 @@ import { Container } from '../components/ui/Container'
 import { fadeUp, staggerContainer } from '../animations/variants'
 
 export function HeroSection() {
+  const handleNavClick = (href: string) => {
+    const targetId = href.replace('#', '')
+    const element = document.getElementById(targetId)
+    if (element) {
+      window.scrollTo({ top: element.offsetTop - 90, behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="home" className="relative overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.24),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.08),transparent_30%)]" />
@@ -21,10 +29,10 @@ export function HeroSection() {
               We help businesses modernise operations, automate workflows, integrate AI and launch products that create a measurable edge.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#contact" variant="primary" icon={<ArrowRight size={16} />}>
+              <Button onClick={() => handleNavClick('contact')} variant="primary" icon={<ArrowRight size={16} />}>
                 Book a Free Consultation
               </Button>
-              <Button href="#projects" variant="secondary" icon={<Play size={16} />}>
+              <Button onClick={() => handleNavClick('projects')} variant="secondary" icon={<Play size={16} />}>
                 View Projects
               </Button>
             </motion.div>
